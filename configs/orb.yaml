@@ -1,0 +1,18 @@
+method: orb
+seed: 42
+dataset:
+  name: roxford5k
+  root: data/raw/roxford5k
+  max_image_size: 1024
+
+features:
+  n_keypoints: 500
+  scale_factor: 1.2
+  n_levels: 8
+  fast_threshold: 20
+
+retrieval:
+  mode: direct
+  ratio_threshold: 0.75
+  vocab_size: 512
+  top_k: 100

@@ -1,0 +1,98 @@
+{
+  "resnet": {
+    "method": "resnet",
+    "seed": 42,
+    "dataset": {
+      "name": "roxford5k",
+      "root": "data/raw/roxford5k"
+    },
+    "model": {
+      "architecture": "resnet50",
+      "weights": "IMAGENET1K_V2",
+      "input_size": 224,
+      "batch_size": 64,
+      "device": "auto",
+      "normalize": true,
+      "pca_dim": null
+    },
+    "retrieval": {
+      "similarity": "cosine",
+      "use_faiss": false,
+      "top_k": 100
+    }
+  },
+  "dinov2": {
+    "method": "dinov2",
+    "seed": 42,
+    "dataset": {
+      "name": "roxford5k",
+      "root": "data/raw/roxford5k"
+    },
+    "model": {
+      "model_name": "facebook/dinov2-base",
+      "hub_repo": "facebookresearch/dinov2",
+      "hub_model": "dinov2_vitb14",
+      "input_size": 448,
+      "pooling": "cls",
+      "batch_size": 32,
+      "device": "auto",
+      "normalize": true,
+      "pca_dim": null
+    },
+    "retrieval": {
+      "similarity": "cosine",
+      "use_faiss": false,
+      "top_k": 100
+    }
+  },
+  "orb": {
+    "method": "orb",
+    "seed": 42,
+    "dataset": {
+      "name": "roxford5k",
+      "root": "data/raw/roxford5k",
+      "max_image_size": 1024
+    },
+    "features": {
+      "n_keypoints": 1000,
+      "scale_factor": 1.2,
+      "n_levels": 8,
+      "fast_threshold": 10
+    },
+    "retrieval": {
+      "mode": "direct",
+      "ratio_threshold": 0.75,
+      "vocab_size": 512,
+      "top_k": 100
+    }
+  },
+  "sift": {
+    "method": "sift",
+    "seed": 42,
+    "dataset": {
+      "name": "roxford5k",
+      "root": "data/raw/roxford5k",
+      "max_image_size": 1024
+    },
+    "features": {
+      "n_keypoints": 1000,
+      "contrast_threshold": 0.04,
+      "edge_threshold": 10,
+      "sigma": 1.6
+    },
+    "bovw": {
+      "vocab_size": 2048,
+      "use_tfidf": true,
+      "max_descriptors_per_image": 500,
+      "sample_size_for_kmeans": 150000,
+      "kmeans_batch_size": 4096,
+      "kmeans_max_iter": 100
+    },
+    "retrieval": {
+      "mode": "bovw",
+      "similarity": "cosine",
+      "ratio_threshold": 0.75,
+      "top_k": 100
+    }
+  }
+}

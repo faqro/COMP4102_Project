@@ -1,0 +1,16 @@
+{
+  "dataset": "ROxford5k",
+  "n_gallery": 4993,
+  "n_queries": 70,
+  "n_val_queries": 21,
+  "n_test_queries": 49,
+  "width_min": 216,
+  "width_max": 1024,
+  "width_mean": 921.6583216503104,
+  "height_min": 132,
+  "height_max": 1024,
+  "height_mean": 850.2521530142199,
+  "easy_positives_mean": 43.27142857142857,
+  "hard_positives_mean": 35.67142857142857,
+  "junk_mean": 19.37142857142857
+}

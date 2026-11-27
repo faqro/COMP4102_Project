@@ -1,0 +1,21 @@
+method: dinov2
+seed: 42
+dataset:
+  name: roxford5k
+  root: data/raw/roxford5k
+
+model:
+  model_name: facebook/dinov2-base
+  hub_repo: facebookresearch/dinov2
+  hub_model: dinov2_vitb14
+  input_size: 224
+  pooling: cls
+  batch_size: 32
+  device: auto
+  normalize: true
+  pca_dim: null
+
+retrieval:
+  similarity: cosine
+  use_faiss: false
+  top_k: 100
